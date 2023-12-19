@@ -152,6 +152,128 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Vue入门" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/12/19/Vue%E5%85%A5%E9%97%A8/">Vue入门</a>
+    </h1>
+  
+
+        
+        <a href="/2023/12/19/Vue%E5%85%A5%E9%97%A8/" class="archive-article-date">
+  	<time datetime="2023-12-19T07:44:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Vue3-指令"><a href="#Vue3-指令" class="headerlink" title="Vue3 指令"></a>Vue3 指令</h4><p>Vue 指令（Directives）是 Vue.js 的一项核心功能，它们可以在 HTML 模板中以 <strong>v-</strong> 开头的特殊属性形式使用，用于将响应式数据绑定到 DOM 元素上或在 DOM 元素上进行一些操作。</p>
+<p>Vue 指令是带有前缀 <strong>v-</strong> 的特殊 HTML 属性，它赋予 HTML 标签额外的功能。</p>
+<p>与传统的 JavaScript 方法相比，使用 Vue 创建响应式页面要容易得多，并且需要的代码更少。</p>
+<p>以下是几个常用的 Vue 指令：</p>
+<table>
+<thead>
+<tr>
+<th align="left">指令</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>v-bind</code></td>
+<td align="center">用于将 Vue 实例的数据绑定到 HTML 元素的属性上。</td>
+</tr>
+<tr>
+<td align="left"><code>v-if</code></td>
+<td align="center">用于根据表达式的值来条件性地渲染元素或组件。</td>
+</tr>
+<tr>
+<td align="left"><code>v-show</code></td>
+<td align="center">v-show 是 Vue.js 提供的一种指令，用于根据表达式的值来条件性地显示或隐藏元素。</td>
+</tr>
+<tr>
+<td align="left"><code>v-for</code></td>
+<td align="center">用于根据数组或对象的属性值来循环渲染元素或组件。</td>
+</tr>
+<tr>
+<td align="left"><code>v-on</code></td>
+<td align="center">用于在 HTML 元素上绑定事件监听器，使其能够触发 Vue 实例中的方法或函数。</td>
+</tr>
+<tr>
+<td align="left"><code>v-model</code></td>
+<td align="center">用于在表单控件和 Vue 实例的数据之间创建双向数据绑定。</td>
+</tr>
+</tbody></table>
+<p>除了这些常用的指令，Vue 还提供了一些其他的指令，如 v-text、v-html 等，以及自定义指令，让开发者能够更加灵活地操作 DOM 元素。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=<span class="string">&quot;utf-8&quot;</span>&gt;</span><br><span class="line">&lt;title&gt;Vue 测试实例 - 菜鸟教程(runoob.com)&lt;/title&gt;</span><br><span class="line">&lt;script src=<span class="string">&quot;https://cdn.staticfile.org/vue/3.2.36/vue.global.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">#app &#123;</span><br><span class="line">  border: dashed black 1px;</span><br><span class="line">  display: inline-block;</span><br><span class="line">  padding-bottom: 10px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#app &gt; button &#123;</span><br><span class="line">  display: block;</span><br><span class="line">  margin: auto;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#lightDiv &#123;</span><br><span class="line">  position: relative;</span><br><span class="line">  width: 150px;</span><br><span class="line">  height: 150px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#lightDiv &gt; img &#123;</span><br><span class="line">  position: relative;</span><br><span class="line">  width: <span class="number">100</span>%;</span><br><span class="line">  height: <span class="number">100</span>%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#lightDiv &gt; div &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: <span class="number">10</span>%;</span><br><span class="line">  left: <span class="number">10</span>%;</span><br><span class="line">  width: <span class="number">80</span>%;</span><br><span class="line">  height: <span class="number">80</span>%;</span><br><span class="line">  border-radius: <span class="number">50</span>%;</span><br><span class="line">  background-color: yellow;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div id=<span class="string">&quot;hello-vue&quot;</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;demo&quot;</span>&gt;</span><br><span class="line">    &lt;!-- v-model 实现表单数据双向绑定 --&gt;</span><br><span class="line">    &lt;input type=<span class="string">&quot;text&quot;</span> v-model=<span class="string">&quot;message&quot;</span>&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- v-bind 将vue实例的数据绑定到Html元素的属性上 v-bind:src 缩写为 :src --&gt;</span><br><span class="line">    &lt;img v-bind:src=<span class="string">&quot;imageSrc&quot;</span> alt=<span class="string">&quot;png&quot;</span>&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- v-<span class="keyword">if</span> 和 v-<span class="keyword">else</span> 指令根据表达式的值来条件性地渲染元素或组件： --&gt;</span><br><span class="line">    &lt;p v-<span class="keyword">if</span>=<span class="string">&quot;showMessage&quot;</span>&gt;Hello Vue&lt;/p&gt;</span><br><span class="line">    &lt;p v-<span class="keyword">else</span>&gt; GoodBy Vue&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- v-<span class="keyword">for</span>根据数组的属性循环渲染元素或组件 --&gt;</span><br><span class="line">    &lt;ul v-<span class="keyword">for</span>=<span class="string">&quot;item in items&quot;</span> :key=<span class="string">&quot;item.id&quot;</span>&gt;</span><br><span class="line">        &lt;li&gt;&#123;&#123; item.name &#125;&#125;&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">         &lt;!-- 参数一次为属性值，属性名，属性索引 --&gt;</span><br><span class="line">        &lt;template v-<span class="keyword">for</span>=<span class="string">&quot;(item, key, index) in object&quot;</span>&gt;</span><br><span class="line">            &lt;li&gt;&#123;&#123;index+<span class="number">1</span>&#125;&#125; &#123;&#123; key &#125;&#125; : &#123;&#123; item &#125;&#125;&lt;/li&gt;</span><br><span class="line">            &lt;li&gt;--------------&lt;/li&gt;</span><br><span class="line">        &lt;/template&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">        &lt;li v-<span class="keyword">for</span>=<span class="string">&quot;n in evenNumbers()&quot;</span>&gt;&#123;&#123; n &#125;&#125;&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;div id=<span class="string">&quot;lightDiv&quot;</span>&gt;</span><br><span class="line">        &lt;!-- v-show 用于根据表达式的值来条件性地显示或隐藏元素。 --&gt;</span><br><span class="line">        &lt;div v-show=<span class="string">&quot;lightOn&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line">        &lt;img src=<span class="string">&quot;https://static.runoob.com/images/svg/img_lightBulb.svg&quot;</span>&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;!-- v-on在html元素上绑定事件监听器 v-on:click缩写为 @click --&gt;</span><br><span class="line">    &lt;button v-on:click=<span class="string">&quot; lightOn =! lightOn &quot;</span>&gt;开/关&lt;/button&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    </span><br><span class="line"><span class="keyword">const</span> app = Vue.createApp(&#123;</span><br><span class="line">    <span class="function"><span class="title">data</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            count: <span class="number">0</span>,</span><br><span class="line">            message: <span class="string">&#x27;Hello, Nick!&#x27;</span>,</span><br><span class="line">            imageSrc: <span class="string">&#x27;https://static.runoob.com/images/code-icon-script.png&#x27;</span>,</span><br><span class="line">            showMessage: <span class="literal">false</span>,</span><br><span class="line">            items: [</span><br><span class="line">                &#123;<span class="attr">id</span>: <span class="number">1</span>, <span class="attr">name</span>: <span class="string">&#x27;nick&#x27;</span>&#125;,</span><br><span class="line">                &#123;<span class="attr">id</span>: <span class="number">2</span>, <span class="attr">name</span>: <span class="string">&#x27;apple&#x27;</span>&#125;,</span><br><span class="line">                &#123;<span class="attr">id</span>: <span class="number">3</span>, <span class="attr">name</span>: <span class="string">&#x27;orange&#x27;</span>&#125;</span><br><span class="line">            ],</span><br><span class="line">            object: &#123;</span><br><span class="line">                name: <span class="string">&#x27;菜鸟教程&#x27;</span>,</span><br><span class="line">                url: <span class="string">&#x27;http://www.runoob.com&#x27;</span>,</span><br><span class="line">                slogan: <span class="string">&#x27;学的不仅是技术，更是梦想！&#x27;</span></span><br><span class="line">            &#125;,</span><br><span class="line">            numbers: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">8</span>],</span><br><span class="line">            lightOn: <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        <span class="function"><span class="title">increment</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> ++<span class="built_in">this</span>.count</span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="title">evenNumbers</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">this</span>.numbers.filter(<span class="function"><span class="params">number</span> =&gt;</span> number % <span class="number">2</span> === <span class="number">0</span>)</span><br><span class="line">        &#125;    </span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> vm = app.mount(<span class="string">&#x27;#hello-vue&#x27;</span>)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h4 id="vue组件"><a href="#vue组件" class="headerlink" title="vue组件"></a>vue组件</h4><p>组件（Component）是 Vue.js 最强大的功能之一。</p>
+<p>组件可以扩展 HTML 元素，封装可重用的代码。</p>
+<p>组件系统让我们可以用独立可复用的小组件来构建大型应用，几乎任意类型的应用的界面都可以抽象为一个组件树：</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2017/01/components.png" alt="img"></p>
+<p>每个 Vue 应用都是通过用 createApp 函数创建的，传递给 createApp 的选项用于配置根组件。当我们挂载应用时，该组件被用作渲染的起点。</p>
+<p>一个应用需要被挂载到一个 DOM 元素中。</p>
+<p><strong>注册一个 button-counter 组件</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建一个vue应用</span></span><br><span class="line"><span class="keyword">const</span> app = Vue.createApp(&#123;&#125;)</span><br><span class="line"><span class="comment">// 定义一个名为 button-counter 的新全局组件</span></span><br><span class="line">app.component(<span class="string">&#x27;button-counter&#x27;</span>, &#123;</span><br><span class="line">  <span class="function"><span class="title">data</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      count: <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  template: <span class="string">`</span></span><br><span class="line"><span class="string">  &lt;button v-on:click=&quot;count++&quot;&gt; 点了 &#123;&#123; count &#125;&#125;次&lt;/button&gt;</span></span><br><span class="line"><span class="string">  `</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//挂载到id为app的dom元素</span></span><br><span class="line">app.mount(<span class="string">&quot;#app&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p><strong>完整代码</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Vue 测试实例 - 菜鸟教程(runoob.com)<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/vue/3.2.36/vue.global.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button-counter</span>&gt;</span><span class="tag">&lt;/<span class="name">button-counter</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button-counter</span>&gt;</span><span class="tag">&lt;/<span class="name">button-counter</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button-counter</span>&gt;</span><span class="tag">&lt;/<span class="name">button-counter</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button-counter</span>&gt;</span><span class="tag">&lt;/<span class="name">button-counter</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"> </span><br><span class="line"><span class="javascript"><span class="comment">// 创建一个Vue 应用</span></span></span><br><span class="line"><span class="javascript"><span class="keyword">const</span> app = Vue.createApp()</span></span><br><span class="line"> </span><br><span class="line"><span class="javascript"><span class="comment">// 定义一个名为 runoob 的新全局组件</span></span></span><br><span class="line"><span class="javascript">app.component(<span class="string">&#x27;button-counter&#x27;</span>, &#123;</span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="title">data</span>(<span class="params"></span>)</span> &#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">return</span> &#123;</span></span><br><span class="line">            count: 0</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line"><span class="handlebars"><span class="xml">    template: `<span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;count++&quot;</span>&gt;</span>点了</span><span class="template-variable">&#123;&#123;<span class="name">count</span>&#125;&#125;</span><span class="xml">次<span class="tag">&lt;/<span class="name">button</span>&gt;</span>`</span></span></span><br><span class="line">&#125;)</span><br><span class="line"> </span><br><span class="line"><span class="javascript">app.mount(<span class="string">&#x27;#app&#x27;</span>)</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>定义一个局部组件</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> runoobA = &#123;</span><br><span class="line">    template: <span class="string">`&lt;h1&gt;我的生命我主宰，从来不惧火与海&lt;/h1&gt;`</span></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 创建一个Vue 应用</span></span><br><span class="line"><span class="keyword">const</span> app = Vue.createApp(&#123;</span><br><span class="line">    components: &#123;</span><br><span class="line">        <span class="string">&#x27;runoob-a&#x27;</span>: runoobA</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2023/12/19/Vue%E5%85%A5%E9%97%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-多学科模型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -827,69 +949,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/04/15/%E6%89%BE%E5%88%B0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%85%B4%E8%B6%A3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-I-want-to-win" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/04/14/I-want-to-win/">I want to win</a>
-    </h1>
-  
-
-        
-        <a href="/2021/04/14/I-want-to-win/" class="archive-article-date">
-  	<time datetime="2021-04-14T13:05:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>I know, I’m tired, sleepy.<br>I know what I want.<br>I won’t give up this time.<br>I will face the difficult.</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/04/14/I-want-to-win/">展开全文 >></a>
         </p>
       
 
